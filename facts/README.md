@@ -37,7 +37,6 @@ We'll do this in a separate file called `create_embeddings.py`.
 NOTE: everytime you ask OpenAI to create embeddings, you'll spend tokens to do this action.
 Plan your app to not create embeddings everytime it runs, just run them once and if everything is okay, you'll have an embedding system ready to be used for the subsequent runs.
 
-
 ## Setting up environment variables
 
 Create a `create_embeddings.py` file inside facts folder import a couple of things to load environment variables.
@@ -89,7 +88,7 @@ embeddings = OpenAIEmbeddings()
 Initiate a splitter that separates chunks by `\n` (new line character).
 Make chunks have circa 200 characters, but don't let this number size cut lines in the middle.
 Luckily, splitters will always use the separator character to cut the chunks needed.
-We can overlap the chunks by 50 characters. 
+We can overlap the chunks by 50 characters.
 
 Overlapping chunks offer you a smooth transition between chunks of a document. This can be relevant for documents that talk extensively about a certain subject.
 
@@ -224,7 +223,6 @@ We could write the rest of the code and design the prompt ourselves, but where's
 Fortunately for you, there's a thing called `Retrievers`.
 These peeps are here to help you retrieve data from the database and connect it to our LLM chain.
 [More info on Retrievers](https://python.langchain.com/docs/modules/data_connection/retrievers/)
-
 
 ```py
 retriever = db.as_retriever()
