@@ -86,3 +86,6 @@ The promise of Langchain is that we can code our apps to be LLM agnostic.
 We then only have to do a simple module for the LLM we want to use and easily replace that module whenever needed.
 
 Next in line we're going to do a simple chat app that you can execute in your shell. Go to the chatapp folder and open the README.md inside of it.
+
+NOTE: We're using Legacy chains in these examples.
+You can also use [LECL Chains](https://python.langchain.com/docs/expression_language/)
