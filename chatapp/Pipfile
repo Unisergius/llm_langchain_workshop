@@ -1,0 +1,12 @@
+    [[source]]
+    url = "https://pypi.org/simple"
+    verify_ssl = true
+    name = "pypi"
+    [packages]
+    langchain = "==0.1.13"
+    openai = "==1.14.3"
+    python-dotenv = "==1.0.1"
+    langchain-openai = "==0.1.1"
+    [dev-packages]
+    [requires]
+    python_version = "3.12"
