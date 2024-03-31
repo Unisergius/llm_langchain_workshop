@@ -160,6 +160,7 @@ cython_debug/
 #.idea/
 
 Pipfile.lock
+*.json
 chatapp/*.py
 chatapp/llms/*.py
 facts/*.py
