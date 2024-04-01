@@ -190,6 +190,7 @@ from dotenv import load_dotenv
 from llms.openai import build_llm
 from langchain_openai import OpenAIEmbeddings
 from langchain_community.vectorstores import Chroma
+#imports are missing here, oopsiedaisy
 
 ```
 
@@ -229,13 +230,13 @@ retriever = db.as_retriever()
 ```
 
 Then refer the retriever to our chain we're about to built.
-We're going to need a LLMChain so don't forget to import it.
+We're going to need a RetrievalQA chain so don't forget to import it.
+Check about RetrievalQA on the above link.
 
 ```py
-chain = LLMChain(
+chain = RetrievalQA.from_chain_type(
     'retriever'=retriever,
-    'llm'=llm,
-    'verbose'=True
+    'llm'=llm
 )
 
 chain.invoke({"Tell me a fact about possums."})
