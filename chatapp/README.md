@@ -156,7 +156,7 @@ In the imports part:
 ```py
 
 from langchain_core.prompts import ChatPromptTemplate, HumanMessagePromptTemplate, MessagesPlaceholder #changed line
-from langchain.memory import ConversationSummaryMemory, FileChatMessageHistory #new line
+from langchain.memory import ConversationSummaryMemory #, FileChatMessageHistory #new line
 ```
 
 Build your memory object, it's important that you set the memory_key the same key you'll use in the prompt object. [More about ConversationSummaryMemory](https://python.langchain.com/docs/modules/memory/types/summary)
@@ -166,7 +166,7 @@ memory = ConversationSummaryMemory(
     llm=chat,
     return_messages=True,
     memory_key='summary',
-    chat_memory=FileChatMessageHistory("chat_history.json")
+    #chat_memory=FileChatMessageHistory("chat_history.json")
 )
 ```
 
@@ -209,6 +209,11 @@ Let's try again.
 1. Ask LLM what 3+5 is. Then ask what happens if you add 4 to the previous answer.
 What happened?
 
-You should have good answers from the LLM. Also your messages are being stored on chat_history.json, because when you built the memory object, you set it up to store the messages with the chat_memory key.
+You should have good answers from the LLM. 
+
+Exercise: Uncomment the `FileChatMessageHistory` import and change `ConversationSummaryMemory` to `ConversationBufferMemory` and see how it behaves different.
+Open the app, try some tabs. Close the app, then open again and try to continue your previous chat. What's happening?
+
+Now your messages are being stored on chat_history.json, because when you built the memory object, you set it up to store the messages with the chat_memory key.
 
 Onto the next part. Go to the folder facts and we'll learn about embeddings. Open the README.md file over there.
