@@ -242,7 +242,7 @@ retriever = db.as_retriever()
 
 Then refer the retriever to our chain we're about to built.
 We're going to need a RetrievalQA chain so don't forget to import it.
-Check about RetrievalQA on the above link.
+Check about RetrievalQA chains [over here](https://api.python.langchain.com/en/latest/chains/langchain.chains.retrieval_qa.base.RetrievalQA.html#langchain.chains.retrieval_qa.base.RetrievalQA) .
 
 ```py
 chain = RetrievalQA.from_chain_type(
@@ -285,5 +285,3 @@ llm = build_llm({
     "callbacks": [ChatModelStartHandler()]
 })
 ```
-
-
