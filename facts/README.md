@@ -176,6 +176,17 @@ for result in results:
 
 Did it work well? What was printed? Discuss what happened.
 
+Try searching for similarity for the following prompts:
+
+1. Tell me a sad fact.
+2. Tell me a happy fact.
+3. Tell me a fact related to Maths.
+4. Tell me a fact that happened in Europe
+5. Give me a fact that seems so unbelievable.
+6. Give me a fact about cats.
+7. Give me a fact about land vehicles.
+8. Give me a fact that upsets people.
+
 ## Now for the main masterpiece
 
 Create a file named `main.py`.
@@ -239,7 +250,9 @@ chain = RetrievalQA.from_chain_type(
     'llm'=llm
 )
 
-chain.invoke({"Tell me a fact about possums."})
+response = chain.invoke("Tell me a fact about possums.")
+
+print(response)
 ```
 
 Then on the pipenv shell terminal, run `python main.py` and check the result.
@@ -272,3 +285,5 @@ llm = build_llm({
     "callbacks": [ChatModelStartHandler()]
 })
 ```
+
+
